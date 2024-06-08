@@ -1,0 +1,56 @@
+# Authored by Anurag kumar
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atlan-backend
+  labels:
+    app: data-collect-atlan
+    cloud: gcp
+    datacenter: primary
+    env: prod
+    org: atlan
+    pod: backend
+    region: asia-south1
+    tier: t1
+  namespace: backend-assignment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: data-collect-atlan
+      pod: backend
+  template:
+    metadata:
+      labels:
+        app: data-collect-atlan
+        cloud: gcp
+        datacenter: primary
+        env: prod
+        org: atlan
+        pod: backend
+        region: asia-south1
+        tier: t1
+    spec:
+      volumes:
+        - name: shared-storage
+          persistentVolumeClaim:
+            claimName: shared-storage-claim
+      containers:
+        - name: at-ba
+          image: asia.gcr.io/atlan-dummylayer/backend/atlan_backend:v0.1.0
+          ports:
+            - containerPort: 8000
+              name: http-server
+          resources:
+            requests:
+              memory: 2Gi
+              cpu: 2
+            limits:
+              memory: 2Gi
+              cpu: 2
+          env:
+            - name: ENV_VARIABLE_NAME
+              value: ENV_VARIABLE_VALUE
+          volumeMounts:
+            - name: shared-storage
+              mountPath: /path/to/shared/storage

@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "d388ebd5-c557-432b-96f3-00d7ac84123e",
+		"name": "atlan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27910010"
+	},
+	"item": [
+		{
+			"name": "Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/health/"
+			},
+			"response": []
+		},
+		{
+			"name": "Forms-GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"form1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/forms/"
+			},
+			"response": []
+		},
+		{
+			"name": "Forms-POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Form 2\",\n    \"email\": \"form2@example.com\",\n    \"created_by\": \"User 2\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/forms/"
+			},
+			"response": []
+		},
+		{
+			"name": "Forms-DATA-GET (specififc)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/forms/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Forms-DATA-DELETE (specififc)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/forms/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Questions-GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"form\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/questions/"
+			},
+			"response": []
+		},
+		{
+			"name": "Questions-POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"form\" : 2,\n    \"text\": \"Question 4\",\n    \"mandatory\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/questions/"
+			},
+			"response": []
+		},
+		{
+			"name": "Ques-GET(specific)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/questions/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Oues-PUT(specific)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"form\" : 1,\n    \"text\" : \"question1-2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/questions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Ques-DELETE(specific)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/questions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Responses-GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/responses/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Responses-POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"form\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/responses/"
+			},
+			"response": []
+		},
+		{
+			"name": "Answers-GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/answers/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Answer-GET(specific)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/answers/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Answer-POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"response\":\"2\",\n    \"question\":\"2\",\n    \"text\":\"Anurag\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/answers/"
+			},
+			"response": []
+		},
+		{
+			"name": "Answers-PUT(specific)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"response\":\"3\",\n    \"question\":\"3\",\n    \"text\":\"hemlo\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/answers/1"
+			},
+			"response": []
+		},
+		{
+			"name": "submit",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/submit/1"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,14 @@
+# Authored by Anurag kumar
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: shared-storage-pv
+spec:
+  storageClassName: shared-storage
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /path/to/actual/shared/storage

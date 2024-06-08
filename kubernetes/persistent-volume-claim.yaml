@@ -1,0 +1,12 @@
+# Authored by Anurag kumar
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shared-storage-claim
+spec:
+  storageClassName: shared-storage
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
